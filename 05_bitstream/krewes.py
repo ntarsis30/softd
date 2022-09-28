@@ -7,7 +7,10 @@ Soft Dev
 
 '''
 DISCO:
-
+Nicholas learned about randchoice
+Konstantin learned about randrange
+We reviewed file io with sys.stdin
+We implemented f strings in our output
 * 
 QCC:
 OPS SUMMARY:

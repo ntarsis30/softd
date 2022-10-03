@@ -1,5 +1,5 @@
 '''
-WE KAN DOers: Nicholas Tarsis, Kosta Dubovskiy
+Flying Chihuahuas: Nicholas Tarsis, Kosta Dubovskiy
 Soft Dev
 #5
 22-09-28

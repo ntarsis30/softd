@@ -14,10 +14,6 @@ import random
 #
 app = Flask(__name__) # Q0: Where have you seen similar syntax in other langs?
 #
-@app.route("/") # Q1: What points of reference do you have for meaning of '/'?
-
-
-
 
 def read():
     jobs = {}
@@ -42,9 +38,14 @@ def weighted_select(d):
         if running_val_sum >= rnum:
             return k
         line += 1
-
+    return "Other"
 # final test
+@app.route("/") # Q1: What points of reference do you have for meaning of '/'?
+
 def hello_world():
 #    print(__name__) # Q2: Where will this print to? Q3: What will it print?
-    return weighted_select(read())  # Q4: Will this appear anywhere? How u know?
+
+    a = read()
+    b = weighted_select(a)
+    return str(b)  # Q4: Will this appear anywhere? How u know?
 app.run()  # Q5: Where have you seen similar constructs in other languages?

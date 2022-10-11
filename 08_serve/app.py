@@ -39,6 +39,15 @@ def weighted_select(d):
             return k
         line += 1
     return "Other"
+
+#this prints out a string of all the jobs in the list separated by <br>
+def csvToString():
+    result = ""
+    jobsDict = read()
+    for k in jobsDict:
+        result = result + "<br>" + k
+    return result
+
 # final test
 @app.route("/") # Q1: What points of reference do you have for meaning of '/'?
 
@@ -47,5 +56,5 @@ def hello_world():
 
     a = read()
     b = weighted_select(a)
-    return str(b)  # Q4: Will this appear anywhere? How u know?
+    return "TNPG: Running Hippos (Nicholas Tarsis, Vansh Saboo, Jeff Chen) <br><br> Selected job: <br> " + str(b) + "<br><br> List of Jobs:" + csvToString() # Q4: Will this appear anywhere? How u know?
 app.run()  # Q5: Where have you seen similar constructs in other languages?

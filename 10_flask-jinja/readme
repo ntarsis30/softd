@@ -1,3 +1,7 @@
 Q0: We predict that it will break when we remove render_template, since there's a line of code with a return statement of "render_template(...)
 Q1: Yes, https://127.0.0.1:5000/my_foist_template
 Q2: We predict that it uses model_tmplt as the html that renders, foo in the html file's title field will be replaced by "fooooo", and that the collection in the html file will be replaced by the coll list we have in this file
+
+Q0.1: The site breaks, giving us a NameError, and a traceback.
+Q1.1: This is correct
+Q2.1: Kind of correct, it displays each element of coll in a new line.

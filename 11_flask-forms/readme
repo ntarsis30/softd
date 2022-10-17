@@ -1,0 +1,19 @@
+TNPG: Running Hippos: (Vansh Saboo, Jeff Chen)
+k11 Form(s) like Voltron
+2022-10-14
+Time Spent: 
+0.49
+
+Predictions:
+What are request.args and request.headers?
+
+We think disp_loginpage displays basic info about the form.
+It seems that authenticate uses request to process user input?
+
+authentiate and disp_loginpage seem to be the same?
+
+Reconciliation:
+When we first spin up the site and go to 127.0.0.1:5000, it runs the disp_login, which displays the html template.
+
+The html has <form action="/auth">, which tells the site to put /auth in the address bar, alongside the values that we put into the form.
+In app.py, /auth runs the authenticate method, which displays "Waaaa hooo HAAAH"

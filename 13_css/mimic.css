@@ -1,14 +1,14 @@
 body {
-    background-color: white;
+    background-color: hwb(0 7% 84%);
 }
 
 .top {
-    background-color: red;
+    background-color: rgb(221, 58, 58);
     text-align: center;
 }
 
 .middle {
-    background-color: blue;
+    background-color: rgb(62, 62, 137);
 }
 
 th {
@@ -16,6 +16,6 @@ th {
 }
 
 .bottom {
-    background-color: green;
+    background-color: rgb(54, 173, 54);
     text-align: right;
 }

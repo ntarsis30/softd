@@ -1,7 +1,8 @@
-#Clyde "Thluffy" Sinclair
+#Flying Turtles | Nicholas Tarsis, Anson Wong
 #SoftDev  
-#skeleton/stub :: SQLITE3 BASICS
-#Oct 2022
+#K18 -- (Python + SQLite)3
+#2022-10-25
+#time spent: 0.5 hours
 
 import sqlite3   #enable control of an sqlite database
 import csv       #facilitate CSV I/O

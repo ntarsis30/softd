@@ -31,22 +31,22 @@ with open("students.csv") as students:
         age = int(i["age"])
         _id = int(i["id"])
         #c.execute("""INSERT INTO student VALUES({name},"age","_id")""")#Use triple quotes to allow for "" with the TEXT value
-        c.execute("INSERT INTO students VALUES(?, ?, ?)",(name,age,_id))#Use triple quotes to allow for "" with the TEXT value
+        c.execute("INSERT INTO students VALUES(?, ?, ?)",(name,age,_id))
     names = c.execute("SELECT * from students")
     print(names.fetchall())
     #print(name,age,_id)
 
-print("\n\n\n\n\n\n\n\n\n")
+print("\n\n\n\n\n\n")
 with open("courses.csv") as courses:
     courses = csv.DictReader(courses)
     for i in courses:
         code = i["code"]
         mark = i["mark"]
         _id = i["id"]
-        c.execute("INSERT INTO courses VALUES(?, ?, ?)",(code,mark,_id))#Use triple quotes to allow for "" with the TEXT value
+        c.execute("INSERT INTO courses VALUES(?, ?, ?)",(code,mark,_id))
     codes = c.execute("SELECT * from courses")
     print(codes.fetchall())
-        #print(code,mark,_id)
+    #print(code,mark,_id)
 
 command = ""          # test SQL stmt in sqlite3 shell, save as string
 c.execute(command)    # run SQL statement

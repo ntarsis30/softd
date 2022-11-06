@@ -1,34 +1,38 @@
+#Flying Turtles | Anson Wong, Nicholas Tarsis
+#SoftDev
+#K19 -- Login
+#2022-11-03
+#time spent: 1
 from flask import Flask,session,request, redirect, url_for,render_template
 
 # Set the secret key to some random bytes. Keep this really secret!
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
-
+USER = "user"
+PASS = "pass"
 
 @app.route('/', methods=['GET', 'POST'])
 def login():
-    if request.method == 'POST':
-        session['username'] = request.form['username']
-        return redirect(url_for('login_attempt'))
-    return '''
-        <form method="post">
-            <p><input type=text name=username>
-            <p><input type=submit value=Login>
-        </form>
-    '''
-@app.route("/login_attempt")
-def login_attempt():
-    if 'username' in session:
-        return f'Logged in as {session["username"]}'
-    return 'You are not logged in'
+    if request.method == "GET":
+        if 'username' in session:
+            return render_template('response.html', response="You are logged in as " + session['username'])
+        return render_template("login.html")
+    username = request.form['username']
+    password = request.form['password']
+    if username != USER:
+        return render_template('login.html', error='Bad username')
+    if password != PASS:
+        return render_template('login.html', error='Bad password')
+    session['username'] = username
+    return redirect(url_for('login')) 
 
-@app.route('/logout')
+@app.route('/logout', methods=['GET', 'POST'])
 def logout():
-    # remove the username from the session if it's there
-    session.pop('username', None)
+    if 'username' in session:
+        session.pop('username', None)
     return redirect(url_for('login'))
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.debug = True
     app.run()

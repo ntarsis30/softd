@@ -117,21 +117,34 @@ const facA = (n) => {
     }
     return n*(facA(n-1));
 }
-
+function fact_test (){
 console.log(fac(1)); // should be 1
 console.log(fac(2)); // should be 2
 console.log(fac(3)); // should be 6
 console.log(fac(4)); // should be 24
 console.log(fac(5)); // should be 120
+}
+
+function fib_test (){
 
 console.log(fib(0)); // should be 0
 console.log(fib(1)); // should be 1
 console.log(fib(2)); // should be 1
 console.log(fib(3)); // should be 2
 console.log(fib(4)); // should be 3
+}
 
+function gcd_test (){
 console.log(gcd(0, 0)); // should be 0
 console.log(gcd(1, 10)); // should be 1
 console.log(gcd(2, 6)); // should be 2
 console.log(gcd(8, 12)); // should be 4
 console.log(gcd(15, 9)); // should be 3
+}
+
+var fact_btn = document.getElementById("a");
+fact_btn.addEventListener("click", fact_test);
+var fib_btn = document.getElementById("b");
+fib_btn.addEventListener("click", fib_test);
+var gcd_btn = document.getElementById("c");
+gcd_btn.addEventListener("click", gcd_test);

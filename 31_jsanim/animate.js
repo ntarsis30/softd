@@ -14,7 +14,6 @@ var clear = (e) => {
 }
 
 var radius = 0;
-var growing = true;
 
 var drawCircle = (e) => {
     ctx.beginPath();
@@ -25,6 +24,10 @@ var drawCircle = (e) => {
 
 var drawDot = () => {
     while (True){
+        radius+=radius_change;
+        if (radius == c.height/2 || radius == 0){
+            radius_change*=-1;
+        }
         clear();
         radius+=radius_change;
         drawCircle();
@@ -34,8 +37,8 @@ var drawDot = () => {
     
 
 }
-requestID = window.requestAnimationFrame(drawDot());
-cancelAnimationFrame(requestID);
+//requestID = window.requestAnimationFrame(drawDot());
+//cancelAnimationFrame(requestID);
 
 
 var stopIt = () => {
